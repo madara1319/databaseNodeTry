@@ -15,7 +15,11 @@ let sql = "SELECT * FROM posts;";
 
 pool.execute(sql,function(err,result){
     if(err) throw err;
-    console.log(result);
+    //console.log(result);
+    result.forEach((res)=>{
+    console.log(res.title);
+    });
+
 });
 
 module.exports = pool.promise();
